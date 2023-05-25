@@ -29,6 +29,7 @@ import useBundleVisitDetection from '../../hooks/useBundleVisitDetection';
 import chromeApiWrapper from './chromeApiWrapper';
 import { ITLess } from '../../utils/common';
 import useEnableSummitFeature from '../../hooks/useEnableSummitFeature';
+import LandingNavFavorites from '../FavoriteServices/LandingNavFavorites';
 
 const ProductSelection = lazy(() => import('../Stratosphere/ProductSelection'));
 
@@ -200,7 +201,8 @@ const ScalprumRoot = memo(
             path="/allservices"
             element={
               <Suspense fallback={LoadingFallback}>
-                <AllServices Footer={<Footer setCookieElement={setCookieElement} cookieElement={cookieElement} />} />
+                {/* <AllServices Footer={<Footer setCookieElement={setCookieElement} cookieElement={cookieElement} />} /> */}
+                <LandingNavFavorites />
               </Suspense>
             }
           />

@@ -106,6 +106,8 @@
     "viewChanged": "View has changed",
     "viewRequest": "View request",
     "viewingAsAccount": "Viewing as Account {selectedAccountNumber}",
-    "weNeverSharePersonalInformation": "We never share your personal information, and you can opt out at any time."
+    "weNeverSharePersonalInformation": "We never share your personal information, and you can opt out at any time.",
+    "viewallservices": "View all services",
+    "myFavoriteServices": "My favorite services"
   }
 }

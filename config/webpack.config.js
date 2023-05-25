@@ -165,6 +165,9 @@ const commonConfig = ({ dev }) => {
               host: `http://localhost:${process.env.NAV_CONFIG}`,
             },
           }),
+          "/apps/landing": {
+            host: "http://localhost:8002"
+          }
         },
       }),
     },

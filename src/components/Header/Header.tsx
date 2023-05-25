@@ -41,6 +41,7 @@ const FeedbackRoute = ({ user }: { user: DeepRequired<ChromeUser> }) => {
 
 export const Header = ({ breadcrumbsProps }: { breadcrumbsProps?: Breadcrumbsprops }) => {
   const user = useSelector(({ chrome }: DeepRequired<ReduxState>) => chrome.user);
+  const navDropdownEnabled = false;
   const search = new URLSearchParams(window.location.search).keys().next().value;
   const isActivationPath = activationRequestURLs.includes(search);
   const isITLessEnv = ITLess();

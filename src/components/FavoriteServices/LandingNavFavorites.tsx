@@ -6,6 +6,11 @@ import EmptyState from '../FavoriteServices/EmptyState';
 import { bundleMapping } from '../../hooks/useBundle';
 import './LandingNavFavorites.scss';
 import ChromeLink from '../ChromeLink';
+import { IntlProvider } from 'react-intl';
+import messages from '../../locales/data.json';
+
+export const locale = 'en';
+const language: keyof typeof messages = 'en';
 
 const LandingNavFavorites = () => {
   const favoritedServices = useFavoritedServices();
@@ -25,6 +30,7 @@ const LandingNavFavorites = () => {
 
   const buildFavorites = () => {
     return favoritedServices.slice((page - 1) * perPage, page * perPage).map((favorite, index) => (
+      <IntlProvider locale={language} messages={messages[language]}>
       <GalleryItem key={index}>
         <ChromeLink href={favorite.pathname} className="chr-c-favorite-service__tile">
           <Card isFullHeight isFlat isSelectableRaised>
@@ -41,11 +47,13 @@ const LandingNavFavorites = () => {
           </Card>
         </ChromeLink>
       </GalleryItem>
+      </IntlProvider>
     ));
   };
 
   return (
     <React.Fragment>
+      <IntlProvider locale={language} messages={messages[language]}>
       <Flex>
         <FlexItem>
           <TextContent>
@@ -83,6 +91,7 @@ const LandingNavFavorites = () => {
           <Gallery hasGutter>{buildFavorites()}</Gallery>
         </React.Fragment>
       )}
+      </IntlProvider>
     </React.Fragment>
   );
 };
